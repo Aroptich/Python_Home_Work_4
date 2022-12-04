@@ -19,7 +19,7 @@ def creating_random_numbers(k: int) -> str:
         elif N == 0:
             data_recording.append(number)
         elif N > 1:
-            data_recording.append(number + '*' + '(' + 'x**' + str(k) + ')')
+            data_recording.append(number + '*' + '(' + 'x**' + str(N) + ')')
         N -= 1
 
     with open('text.txt', 'w', encoding='UTF-8') as l:
@@ -27,4 +27,4 @@ def creating_random_numbers(k: int) -> str:
     # print(f'{"+".join(data_recording).replace("1*","" )} = 0')
 
 
-creating_random_numbers(k=4)
+creating_random_numbers(k=5)
