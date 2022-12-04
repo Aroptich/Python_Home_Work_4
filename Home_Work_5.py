@@ -38,6 +38,10 @@ def creating_a_polynomial_layout(b, d) -> list[str]:
             diff_polynomial.append(j.replace(k, ''))
 
     return diff_polynomial
+def recording_file(a):
+    """Записываем получившийся результат сложения в новый файл"""
+    with open('finally_file.txt', 'w', encoding='UTF-8') as finally_polynomial:
+        finally_polynomial.writelines(f'{"+".join(a)} = 0')
 
 
 # Создаем список из файлов
@@ -58,11 +62,5 @@ for j in temp_list:
 
 v = [x + y for x, y in
      zip(sum_ccoefficients(list_of_coefficients), creating_a_polynomial_layout(temp_list[0], list_of_coefficients[0]))]
-
-
-def recording_file(a):
-    with open('finally_file.txt', 'w', encoding='UTF-8') as finally_polynomial:
-        finally_polynomial.writelines(f'{"+".join(a)} = 0')
-
-
+#Вызываем функцию, отвечающая за запись суммы двух многочленов
 recording_file(v)
